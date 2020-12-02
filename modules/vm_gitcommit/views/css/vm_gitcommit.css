@@ -1,0 +1,10 @@
+/* 
+    Created on : 6 nov. 2020, 11:06:28
+    Author     : Vivien Marcadé
+*/
+#vm_gitcommit_block_home {
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+    background: #fff;
+    padding: 1.563rem 1.25rem;
+    margin-bottom: 1.563rem;
+}
