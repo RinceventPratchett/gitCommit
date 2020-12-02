@@ -50,15 +50,15 @@ class Vm_GitCommit extends Module
         return true;
     }
     /*exemple to load an array
-     * // Enregistre un tableau dans la table Configuration
+     * // record an array in Configuration table
         Configuration::updateValue('VM_GITCOMMIT_SETTINGS', serialize(array(true, true, false)));
-    // Le récupère
+    // request it
         $configuration_array = unserialize(Configuration::get('VM_GITCOMMIT_SETTINGS'));
      */
     public function uninstall()
     {
         if (!parent::uninstall() ||
-            !Configuration::deleteByName('VM_GITCOMMIT_ACCOUNT') || //allow to check the BDD, table ps_configuration
+            !Configuration::deleteByName('VM_GITCOMMIT_ACCOUNT') || //allow to check the BDD, table ps_configuration and delete the row
             !Configuration::deleteByName('VM_GITCOMMIT_DEPOSITE') || 
             !Configuration::deleteByName('VM_GITCOMMIT_TOKEN')
         ) {
