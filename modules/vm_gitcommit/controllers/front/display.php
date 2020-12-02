@@ -5,7 +5,7 @@ class vm_gitcommitdisplayModuleFrontController extends ModuleFrontController
     {
         parent::initContent();
         
-        $gitToken = Db::getInstance()->getValue('SELECT value FROM '._DB_PREFIX_.'configuration WHERE name="VM_GITCOMMIT_TOKEN"');
+        $gitToken = Db::getInstance()->getValue('SELECT value FROM '._DB_PREFIX_.'configuration WHERE name="VM_GITCOMMIT_TOKEN"'); //call Token recorded in BDD
         $accountGitHUb = Db::getInstance()->getValue('SELECT value FROM '._DB_PREFIX_.'configuration WHERE name="VM_GITCOMMIT_ACCOUNT"');
         $depositeGitHub = Db::getInstance()->getValue('SELECT value FROM '._DB_PREFIX_.'configuration WHERE name="VM_GITCOMMIT_DEPOSITE"');
         $certificate_location = 'F:\www\wamp64\www\gitcommit\modules\vm_gitcommit\cert\cacert-2020-10-14.pem'; //mandatory to create a curl connection

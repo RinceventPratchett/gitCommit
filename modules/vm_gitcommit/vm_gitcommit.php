@@ -96,10 +96,10 @@ class Vm_GitCommit extends Module
     }
     public function displayForm()
     {
-        // Récupère la langue par défaut
+        // load default language
         $defaultLang = (int)Configuration::get('PS_LANG_DEFAULT');
 
-        // Initialise les champs du formulaire dans un tableau
+        // init fields contained in BO configuration
         $form = array(
             'form' => array(
                 'legend' => array(
@@ -146,7 +146,7 @@ class Vm_GitCommit extends Module
         // Langue
         $helper->default_form_language = $defaultLang;
 
-        // Charge la valeur de VM_GITCOMMIT_ACCOUNT depuis la base
+        // load value from BDD 
         $helper->fields_value['VM_GITCOMMIT_ACCOUNT'] = Configuration::get('VM_GITCOMMIT_ACCOUNT');
         $helper->fields_value['VM_GITCOMMIT_DEPOSITE'] = Configuration::get('VM_GITCOMMIT_DEPOSITE');
         $helper->fields_value['VM_GITCOMMIT_TOKEN'] = Configuration::get('VM_GITCOMMIT_TOKEN');
@@ -161,7 +161,7 @@ class Vm_GitCommit extends Module
         ]);
         return $this->display(__FILE__, 'vm_gitcommit.tpl');
     }
-    public function hookDisplayHeader()
+    public function hookDisplayHeader() //load the css file in the header
     {        
         $this->context->controller->registerStylesheet(
             'vm_gitcommit',
